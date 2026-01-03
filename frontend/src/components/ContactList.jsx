@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-
+const API = import.meta.env.VITE_BACKEND_URL;
 const ContactList = () => {
 
   const [contacts, setContacts] = useState([]);
 
   const getContacts = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/contacts")
+      const res = await axios.get(`${API}/api/contacts`)
       // console.log(res.data);
       setContacts(res.data.data);
     } catch (error) {
@@ -21,7 +21,7 @@ const ContactList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:4000/api/contacts/${id}`);
+      const res = await axios.delete(`${API}/api/contacts/${id}`);
       if (res.data.success) {
         toast.success(res.data.message);
         setContacts(prev => prev.filter(contact => contact._id !== id));

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom"
+const API = import.meta.env.VITE_BACKEND_URL;
 
 const ContactForm = () => {
 
@@ -18,7 +19,7 @@ const ContactForm = () => {
     e.preventDefault();
     // console.log({name, email, message, phone});
     try {
-      const response = await axios.post("http://localhost:4000/api/contacts", {name, email, phone, message});
+      const response = await axios.post(`${API}/api/contacts`, {name, email, phone, message});
       
       if (response.data.success) {
       toast.success(response.data.message || "Contact added successfully");
