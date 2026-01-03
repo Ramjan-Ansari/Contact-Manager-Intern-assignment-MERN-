@@ -59,35 +59,7 @@ Backend: Render / Railway
 
 ---
 
-📁 Project Structure
 
-contact-manager/
-├── backend/
-│   ├── models/
-│   │   └── contactModel.js
-│   ├── config/
-│   │   └── mongodb.js
-│   ├── routes/
-│   │   └── contactRoutes.js
-│   ├── server.js
-│   ├── .env
-│   └── package.json
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── ContactForm.jsx
-│   │   │   └── ContactList.jsx
-│   │   ├── pages/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── .env
-│   └── package.json
-│
-└── README.md
-
-
----
 
 ⚙️ Environment Variables
 
@@ -101,9 +73,6 @@ MONGO_URI=your_mongodb_connection_string
 PORT=4000
 
 > ⚠️ Note: In Vite, all frontend environment variables must start with VITE_.
-
-
-
 
 ---
 
