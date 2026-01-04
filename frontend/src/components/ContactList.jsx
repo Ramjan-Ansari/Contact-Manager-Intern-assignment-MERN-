@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { toast } from 'react-toastify';
 const API = import.meta.env.VITE_BACKEND_URL;
 const ContactList = () => {
 
@@ -20,17 +21,21 @@ const ContactList = () => {
   },[])
 
   const handleDelete = async (id) => {
+
+    setContacts(prev => prev.filter(c => c._id !== id));
+
     try {
       const res = await axios.delete(`${API}/api/contacts/${id}`);
       if (res.data.success) {
-        toast.success(res.data.message);
-        setContacts(prev => prev.filter(contact => contact._id !== id));
+        toast.success(res.data.message, { autoClose: 1500 });
       }
     } catch (error) {
-      console.log(error);
       toast.error("Failed to delete contact");
     }
   };
+
+
+
 
   return (
     <div className='mt-10 mx-2 sm:mx-10 flex flex-wrap'>
