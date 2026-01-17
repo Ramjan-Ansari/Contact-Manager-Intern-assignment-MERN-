@@ -2,6 +2,10 @@
 
 A full-stack Contact Manager application built using the MERN stack. Users can submit contact details via a form, view all submitted contacts in real time, and delete contacts. The project follows modern best practices such as ES Modules, environment variables, REST APIs, and user-friendly toast notifications.
 
+---
+
+Live Demo
+🔗 https://contact-manager-frontend-v.vercel.app/
 
 ---
 
