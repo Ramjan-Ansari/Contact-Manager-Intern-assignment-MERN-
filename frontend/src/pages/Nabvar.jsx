@@ -10,7 +10,7 @@ const Nabvar = () => {
                 <h1>Home</h1>
             </NavLink>
             <NavLink to={'/contact'}>
-                <h1>Contact Form</h1>
+                <h1>Contact Add</h1>
             </NavLink>
 
             <NavLink to={'/list'}>

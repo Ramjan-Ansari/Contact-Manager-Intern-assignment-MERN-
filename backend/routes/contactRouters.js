@@ -15,6 +15,12 @@ contactRouter.post('/', async (req, res)=>{
         message: "Name and phone are required"
       });
     }
+
+    if(phone.length < 9){
+      return res.json({success: false, message: "Plz enter valid number"});
+    }else if(phone.length > 10){
+      return res.json({success:false, message: "Plz enter valid number"})
+    }
     
     const contact = new Contact({ name, email, phone, message });
     await contact.save();

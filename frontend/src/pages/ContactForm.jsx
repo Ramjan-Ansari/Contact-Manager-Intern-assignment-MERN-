@@ -44,18 +44,18 @@ const ContactForm = () => {
   return (
     <div >
         <h1 className='text-center mt-14 text-2xl'>Contact Form</h1>
-        <form onSubmit={handleSubmit} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto gap-4 text-gray-800'>
-            <label className='w-full pl-3 cursor-pointer ' htmlFor="name">Name</label>
+        <form onSubmit={handleSubmit} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto text-gray-800'>
+            <label className='w-full pl-2 mt-4 cursor-pointer' htmlFor="name">Name</label>
             <input id='name' value={name} onChange={(e)=> setname( e.target.value)} type="text" placeholder='Enter a name' required className='box' />
 
-            <label className='w-full pl-3 cursur-poiner' htmlFor="email">Email</label>
+            <label className='w-full pl-2 cursor-pointer' htmlFor="email">Email</label>
             <input id='email' value={email} onChange={(e)=> setEmail(e.target.value)} type="email" placeholder='abc@gmail.com'  className='box' />
 
-            <label className='w-full pl-3 cursur-poiner' htmlFor="phone">Phone No.</label>
-            <input className='box' value={phone} onChange={(e)=>setPhone(e.target.value)} type="number" placeholder='9876543210' id='phone' required />
+            <label className='w-full pl-2 cursor-pointer' htmlFor="phone">Phone No.</label>
+            <input className='box' value={phone} onChange={(e)=>setPhone(e.target.value)} type="number" placeholder='9876543210' id='phone' maxLength={10}  required />
 
-            <label className='w-full pl-3 cursur-poiner' htmlFor="msg">Message</label>
-            <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='box' name="" id="msg" maxLength={350} ></textarea>
+            <label className='w-full pl-2 cursor-pointer' htmlFor="msg">Message</label>
+            <textarea value={message} maxLength={99} onChange={(e)=>setMessage(e.target.value)} className='box' name="" id="msg" maxLength={350} ></textarea>
             
             <button disabled={!isValid} className={` font-md px-12 py-2 text-white ${isValid? "bg-orange-600" : "bg-gray-900"} `} type='submit'>Submit</button>
 
